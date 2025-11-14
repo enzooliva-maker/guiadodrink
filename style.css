@@ -1,0 +1,312 @@
+/* =====================================
+   ARQUIVO: style.css
+   =====================================
+*/
+
+/* --- :root define as cores da sua marca para reusar facilmente --- */
+:root {
+    --coral-energetico: #FF6B6B;
+    --menta-refrescante: #4ECDC4;
+    --amarelo-citrico: #FFD166;
+    --branco-gelo: #F7FFF7;
+    --azul-profundo: #1A535C;
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Variáveis do Modo Escuro */
+    --dark-bg: #1A2D30;
+    --dark-section: #25393D;
+    --dark-text: #F7FFF7;
+}
+
+/* --- Configurações Gerais --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Para o botão rolar suavemente */
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--azul-profundo);
+    background-color: var(--branco-gelo);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s; /* Adiciona transição suave */
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--azul-profundo);
+    margin-bottom: 15px;
+    transition: color 0.3s;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+/* --- Bloco 1: Hero --- */
+.hero {
+    position: relative; /* Necessário para posicionar o botão */
+    background-color: #fff;
+    text-align: center;
+    padding: 60px 20px 70px;
+    border-bottom: 2px solid #eee;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    color: var(--coral-energetico);
+}
+
+.hero h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Botão de Tema --- */
+#theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--branco-gelo);
+    border: 2px solid var(--azul-profundo);
+    color: var(--azul-profundo);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Círculo perfeito */
+    font-size: 1.5rem; /* Tamanho do emoji */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+}
+
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--coral-energetico);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 18px 40px;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+}
+
+/* --- Bloco 2: Oferta --- */
+.offer {
+    padding: 60px 0;
+}
+
+.offer-flex {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.offer-text {
+    flex: 1; /* Ocupa 50% do espaço */
+}
+
+.offer-image {
+    flex: 1; /* Ocupa 50% do espaço */
+    text-align: center;
+}
+
+.offer-image img {
+    max-width: 100%;
+    min-width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(26, 83, 92, 0.2);
+    transition: box-shadow 0.3s;
+}
+
+.offer-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+}
+
+.offer-text ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.offer-text li {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.offer-text li::before {
+    /* "Checkmark" na cor menta */
+    content: '✔';
+    color: var(--menta-refrescante);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 15px;
+    line-height: 1.2;
+}
+
+/* --- Bloco 3: Formulário --- */
+.form-block {
+    background-color: #fff;
+    padding: 70px 20px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.form-block h2 {
+    font-size: 2.2rem;
+}
+
+.form-block p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-container {
+    margin-top: 30px;
+    /* O iframe do Google Forms será centralizado aqui */
+}
+
+/* --- Rodapé --- */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--azul-profundo);
+    color: var(--branco-gelo);
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+/* --- AJUSTE DE CORREÇÃO (DA SUA IMAGEM) --- */
+/* Isto corrige o alinhamento do texto na lista de oferta */
+.offer-text li strong {
+    display: inline-block;
+    min-width: 140px; /* Ajuste este valor se necessário */
+    vertical-align: top;
+    padding-right: 5px; /* Adiciona um pequeno espaço */
+}
+
+
+/* --- Ajustes para Celular (Responsivo) --- */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .offer-flex {
+        flex-direction: column; /* Coloca a imagem embaixo do texto */
+    }
+
+    .offer-image img {
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+/* Ajuste adicional para o texto da lista em telas menores */
+@media (max-width: 480px) {
+    .offer-text li strong {
+        min-width: 100px; /* Reduz a largura mínima em telas pequenas */
+    }
+
+    #theme-toggle {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+
+/* ==================================================================
+==================================================================
+   >>> REGRAS DO MODO NOTURNO (DARK MODE) <<<
+   Aplicadas quando o <body> tem a classe ".dark-mode"
+==================================================================
+==================================================================
+*/
+
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #fff; /* Títulos em branco puro para destaque */
+}
+
+/* Bloco 1: Hero */
+body.dark-mode .hero {
+    background-color: var(--dark-section);
+    border-bottom-color: #334a50; /* Uma borda sutil */
+}
+
+body.dark-mode .hero h1 {
+    color: var(--coral-energetico); /* Mantém o destaque da marca */
+}
+
+/* Botão de Tema no Modo Escuro */
+body.dark-mode #theme-toggle {
+    background: var(--dark-section);
+    border-color: var(--menta-refrescante);
+    color: var(--menta-refrescante);
+}
+
+/* Bloco 2: Oferta */
+body.dark-mode .offer-image img {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Sombra mais escura */
+}
+
+/* Bloco 3: Formulário */
+body.dark-mode .form-block {
+    background-color: var(--dark-section);
+}
+
+/* Inverte as cores do iframe do Google Forms */
+body.dark-mode .form-container iframe {
+    filter: invert(0.9) hue-rotate(180deg);
+}
+
+/* Rodapé */
+body.dark-mode footer {
+    color: var(--branco-gelo);
+}
